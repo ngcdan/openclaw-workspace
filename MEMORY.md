@@ -31,7 +31,9 @@ _Curated facts & lessons learned over time. Không lặp USER.md (con người) 
 
 ## Decisions & Context
 - 2026-02-07: “Backlog” mặc định đọc từ `/Users/nqcdan/dev/wiki/BACKLOG.md`.
-- 2026-02-07: Gửi email nên dùng automation script qua **Gmail API OAuth** (không dựa vào Apple Mail). Tài nguyên nằm ở `/Users/nqcdan/dev/google-sheet-exp` (credentials.json + token.json) và script mẫu `send-test-email.mjs`.
+- 2026-02-07: Gửi email nên dùng automation script qua **Gmail API OAuth** (không dựa vào Apple Mail).
+  - Secrets path (ổn định): `/Users/nqcdan/.openclaw/secrets/google/{credentials.json,token.json}`
+  - Script mẫu: `/Users/nqcdan/dev/google-sheet-exp/send-test-email.mjs` (project: `/Users/nqcdan/dev/google-sheet-exp`)
 - 2026-02-07: Email style preference: thường mở đầu bằng **"Hi a,"** (ít dùng "Chào a,") và viết gọn, tránh câu dẫn dài. Subject format hay dùng: `Daily backlog snapshot – YYYY-MM-DD`.
 - 2026-02-04: Dọn `~/.zprofile` — bị append `brew shellenv` hàng trăm lần khiến kitty treo ~13s. Rule: KHÔNG dùng `>>` vào file init; dùng `eval` trực tiếp + guard.
 - 2026-02-04: gitstatus (powerlevel10k) failed to initialize — cần theo dõi nếu tái phát.
