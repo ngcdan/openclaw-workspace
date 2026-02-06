@@ -1,40 +1,66 @@
 # TOOLS.md - Local Notes
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+Lệnh và conventions cụ thể cho môi trường của anh Đàn.
 
-## What Goes Here
+## Google (OAuth)
+- Account: `nqcdan1908@gmail.com`
+- Gmail API OAuth (Desktop client) used by automation scripts:
+  - Project dir: `/Users/nqcdan/dev/google-sheet-exp`
+  - OAuth client: `/Users/nqcdan/dev/google-sheet-exp/credentials.json`
+  - OAuth token: `/Users/nqcdan/dev/google-sheet-exp/token.json`
+  - Send email script (example): `/Users/nqcdan/dev/google-sheet-exp/send-test-email.mjs`
+- Notes: không paste secrets vào chat/wiki; chỉ lưu path + metadata.
 
-Things like:
+## Navigate
 
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+| Alias | Path |
+|-------|------|
+| OF1 platform start | `cd /Users/nqcdan/OF1/forgejo/of1-platform/working/release-platform/server-env` |
+| OF1 root (build) | `cd /Users/nqcdan/OF1/forgejo/of1-platform/of1-build` |
+| OF1 mobile | `cd /Users/nqcdan/OF1/forgejo/of1-platform/of1-mobile/apps/mobile` |
+| OF1 python | `cd /Users/nqcdan/OF1/forgejo/of1-platform/datatp-python && source venv/bin/activate` |
+| OF1 beta namespace | `cd /Users/nqcdan/OF1/forgejo/of1-cloud/of1-cloud-dev/namespaces/of1/beta/platform` |
+| OF1 CRM namespace | `cd /Users/nqcdan/OF1/forgejo/of1-cloud/of1-cloud-dev/namespaces/of1/dev/crm` |
 
-## Examples
+## VS Code Workspaces
 
-```markdown
-### Cameras
+- `code_ws ~/OF1/ws/mobile.code-workspace`
+- `code_ws ~/OF1/ws/crm.code-workspace`
+- `code_ws ~/OF1/ws/datatp-python.code-workspace`
 
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
+## Build
 
-### SSH
+- `./tools.sh build -clean -code -ui`
+- `gradle clean build --refresh-dependencies`
+- `gradle publishToMaven`
 
-- home-server → 192.168.1.100, user: admin
+## Git
 
-### TTS
+- **GitHub:** `git config user.name "nqcdan" && git config user.email "linuss1908@gmail.com"`
+- **Forgejo:** `git config -g user.name "jesse.vnhph" && git config -g user.email "jesse.vnhph@openfreightone"`
+- `./git.sh working:set crm` / `./git.sh working:set develop`
+- `./git.sh working:merge crm`
+- `./git.sh status && ./git.sh working:commit "update code" && ./git.sh working:push`
+- `git config --global pull.ff only`
+- `git config --global core.autocrlf input`
 
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
+## Mobile / Flutter
 
-## Why Separate?
+- `flutter doctor`
+- `flutter clean && flutter pub get`
+- `flutter build apk --release`
+- `flutter build appbundle --release`
+- `flutter build ios --release`
 
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+## K8s / Server
 
----
-
-Add whatever helps you do your job. This is your cheat sheet.
+- `tar -xvf server.tar`
+- Copy local → remote: `kns-ctl of1-prod-platform cp-to server.tar server:/home/datatp/release-platform`
+- Copy remote → local: `kns-ctl of1-beta-platform cp-from server:home/datatp/release-platform/server.tar ./server.tar`
+- `kns-ctl of1-prod-platform get services,pods`
+- `kns-ctl of1-dev-crm get services,pods`
+- `./k-ctl.sh ns status`
+- `./k-ctl.sh admin undeploy` → `./k-ctl.sh admin sync-pv` → `./k-ctl.sh admin deploy`
+- Exec vào pod: `kns-ctl of1-prod-platform exec -it python-msa -- su - datatp`
+- Exec CRM: `kns-ctl of1-dev-crm exec -it server -- su - datatp`
+- Nginx: `ssh of1@nginx-waf.of1-apps.svc.cluster.local`
