@@ -1,0 +1,8 @@
+{
+  "name": "openclaw-gmail-automation",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "googleapis": "^149.0.0"
+  }
+}

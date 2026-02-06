@@ -33,10 +33,11 @@ _Curated facts & lessons learned over time. Không lặp USER.md (con người) 
 - 2026-02-07: “Backlog” mặc định đọc từ `/Users/nqcdan/dev/wiki/BACKLOG.md`.
 - 2026-02-07: Gửi email nên dùng automation script qua **Gmail API OAuth** (không dựa vào Apple Mail).
   - Secrets path (ổn định): `/Users/nqcdan/.openclaw/secrets/google/{credentials.json,token.json}`
-  - Script mẫu: `/Users/nqcdan/dev/google-sheet-exp/send-test-email.mjs` (project: `/Users/nqcdan/dev/google-sheet-exp`)
-- 2026-02-07: Email style preference: thường mở đầu bằng **"Hi a,"** (ít dùng "Chào a,") và viết gọn, tránh câu dẫn dài. Subject format hay dùng: `Daily backlog snapshot – YYYY-MM-DD`.
-- 2026-02-04: Dọn `~/.zprofile` — bị append `brew shellenv` hàng trăm lần khiến kitty treo ~13s. Rule: KHÔNG dùng `>>` vào file init; dùng `eval` trực tiếp + guard.
-- 2026-02-04: gitstatus (powerlevel10k) failed to initialize — cần theo dõi nếu tái phát.
+- 2026-02-07: Email style preference: thường mở đầu bằng **"Hi a,"** (ít dùng "Chào a,") và viết gọn, tránh câu dẫn dài.
+  - Subject format: `Daily backlog snapshot – YYYY-MM-DD` (lưu ý ký tự “–” non-ASCII → header phải encode RFC2047 để tránh lỗi kiểu `Ã¢Â€Â“`).
+- 2026-02-07: Canonical script gửi backlog snapshot đặt trong OpenClaw workspace (không đặt ad-hoc trong repo khác):
+  - `/Users/nqcdan/.openclaw/workspace/automation/gmail/send-backlog-snapshot.mjs`
+  - `npm i` tại `/Users/nqcdan/.openclaw/workspace/automation/gmail`
 - 2026-02-03: Kết nối Google Workspace (Gmail, Calendar, Drive).
 - 2026-02-03: Set up heartbeats cho proactive checking.
 
