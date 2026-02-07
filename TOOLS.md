@@ -4,13 +4,11 @@ Lệnh và conventions cụ thể cho môi trường của anh Đàn.
 
 ## Google (OAuth)
 - Account: `nqcdan1908@gmail.com`
+- Password: `Nqcdan:1023@@`
 - Canonical secrets location (stable):
   - OAuth client: `/Users/nqcdan/.openclaw/secrets/google/credentials.json`
   - OAuth token: `/Users/nqcdan/.openclaw/secrets/google/token.json`
 - Gmail API OAuth (Desktop client) automation project:
-  - Project dir: `/Users/nqcdan/dev/google-sheet-exp`
-  - Send email script (example): `/Users/nqcdan/dev/google-sheet-exp/send-test-email.mjs`
-- Notes: không paste secrets vào chat/wiki; chỉ lưu path + metadata.
 
 ## Navigate
 
@@ -42,8 +40,6 @@ Lệnh và conventions cụ thể cho môi trường của anh Đàn.
 - `./git.sh working:set crm` / `./git.sh working:set develop`
 - `./git.sh working:merge crm`
 - `./git.sh status && ./git.sh working:commit "update code" && ./git.sh working:push`
-- `git config --global pull.ff only`
-- `git config --global core.autocrlf input`
 
 ## Mobile / Flutter
 
