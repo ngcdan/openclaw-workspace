@@ -28,6 +28,7 @@ _Curated facts & lessons learned over time. Không lặp USER.md (con người) 
 - **Viết ra để rỗng não**: mọi việc/ý tưởng/request phải đi qua note/issue/checklist (não để suy nghĩ, không để nhớ).
 - **Batch inbox** để giảm context switching: chỉ mở user inbox theo 2 khung giờ cố định ~**11:00** và ~**16:00**; ngoài khung này ưu tiên deep work (code/review/plan).
 - **One-pipeline rule**: request từ Zalo/Outlook/call cuối cùng phải được chuẩn hoá và đổ về 1 chỗ trong `wiki/work/` (issue/backlog/tracking).
+- **Screenshot → inbox rule (2026-02-07):** Khi anh Đàn ném ảnh chụp màn hình từ Zalo/Outlook/bất kỳ chat nào **mà không nói gì thêm**, tự động archive vào `wiki/notes/00_inbox/` (kèm `assets/YYYY-MM-DD/`), tạo 1 note markdown embed ảnh + trích xuất tối thiểu (email/timestamp nếu rõ), rồi commit+push.
 
 ## Decisions & Context
 - 2026-02-07: “Backlog” mặc định đọc từ `/Users/nqcdan/dev/wiki/BACKLOG.md`.
