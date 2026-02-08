@@ -14,7 +14,35 @@
 
 ### Preferences Learned
 - **Coding style:** không emoji trong code; code nhìn như người bình thường viết
+- **Code organization:** thích style hướng đối tượng/class (Java-ish), chia lớp theo trách nhiệm, flow rõ ràng
+- **Comments/docs:** comment ngắn gọn nhưng đủ để đọc hiểu mục đích + flow
 - **Autonomy:** được push remote branch tự do; hỏi trước khi deploy/restart/migrate/force-push/xóa lớn/hành động ra ngoài
+- **Chat/Response format:** Với *mọi* tin nhắn Đàn gửi (tiếng Việt/tiếng Anh/mix), Zoe sẽ:
+  1) đứng ở góc nhìn của Đàn → Zoe để hiểu đúng **ý định**
+     (không word-by-word, không quote lại)
+  2) viết **1 dòng tiếng Anh** thể hiện đúng ý định đó, theo vibe **anh/em**
+     cho tự nhiên (coi như Đàn đang nói với Zoe)
+     - Style mặc định: **casual/everyday**
+     - Có thể dùng **I/you** thân mật
+     - **Không paraphrase, không thêm ý mới**, không thêm tiền tố/nhãn
+  3) trả lời bằng tiếng Việt ở dưới
+  4) không dịch code/thuật ngữ kỹ thuật/đoạn text dài;
+     các trường hợp đó không cần rewrite
+     (chỉ rewrite khi là đoạn chat bình thường)
+
+  **Examples (VN → EN rewrite, casual everyday, anh/em vibe):**
+  - VN: "Anh mệt quá, hôm nay làm nhiều việc."
+    EN: "I’m pretty wiped out—I had a lot on my plate today."
+  - VN: "Em nhắc anh mai dậy sớm tập thể dục nhé."
+    EN: "Remind me to get up early tomorrow and work out, okay?"
+  - VN: "Anh đang phân vân cái này, em góp ý giúp anh với."
+    EN: "I’m on the fence about this—can you give me your take?"
+  - VN: "Anh vừa finish xong PR, em review giúp anh nha."
+    EN: "I just finished the PR—can you take a look and review it for me?"
+  - VN: "Gửi anh backlog hôm nay."
+    EN: "Send me today’s backlog snapshot."
+  - VN: "Cho anh vài ví dụ."
+    EN: "Give me a few examples."
 
 ### Important Dates
 _(Chưa có thông tin)_
@@ -26,6 +54,8 @@ _(Chưa có thông tin)_
 ### Quỳnh (Q)
 - Bạn gái anh Đàn
 - Bằng tuổi, xưng Q/Đ
+- Quê ở Bình Định, làm việc ở Sài Gòn (Hồ Chí Minh)
+- Công việc: Sales forwarder (Agent) ở công ty Bee Logistics.
 
 ---
 

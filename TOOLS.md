@@ -2,7 +2,7 @@
 
 Lệnh và conventions cụ thể cho môi trường của anh Đàn.
 
-## Google (OAuth)
+## Google (OAuth), Cloudflare
 - Account: `nqcdan1908@gmail.com`
 - Password: `Nqcdan:1023@@`
 - Canonical secrets location (stable):
@@ -21,15 +21,32 @@ Lệnh và conventions cụ thể cho môi trường của anh Đàn.
 | OF1 beta namespace | `cd /Users/nqcdan/OF1/forgejo/of1-cloud/of1-cloud-dev/namespaces/of1/beta/platform` |
 | OF1 CRM namespace | `cd /Users/nqcdan/OF1/forgejo/of1-cloud/of1-cloud-dev/namespaces/of1/dev/crm` |
 
+## Shell / Environment (zsh)
+
+- Shell: zsh + oh-my-zsh + powerlevel10k
+- **tmux auto-attach:** nếu interactive login shell và không phải SSH → auto attach/create session `default`
+- **TERM over SSH:** nếu có `SSH_CONNECTION` → `TERM=xterm-256color` (tránh glitch render)
+- Loads:
+  - `brew shellenv`
+  - `nvm` (`$NVM_DIR`, `nvm.sh`)
+  - `pyenv` (`$PYENV_ROOT`)
+  - `sdkman`
+  - `fzf` config + `fzf-cheatsheet` (bind `Alt+g`)
+  - OpenClaw completion: `openclaw completion --shell zsh`
+
 ## VS Code Workspaces
 
-- `code_ws ~/OF1/ws/mobile.code-workspace`
-- `code_ws ~/OF1/ws/crm.code-workspace`
-- `code_ws ~/OF1/ws/datatp-python.code-workspace`
+- Function: `vscode <path-to-.code-workspace>` (mở workspace; nếu đã có window thì focus đúng window)
+  - Tip: có thể alias thêm `alias code_ws=vscode` nếu muốn đúng thói quen gọi `code_ws`.
+- Examples:
+  - `vscode ~/OF1/ws/mobile.code-workspace`
+  - `vscode ~/OF1/ws/crm.code-workspace`
+  - `vscode ~/OF1/ws/datatp-python.code-workspace`
 
 ## Build
 
 - `./tools.sh build -clean -code -ui`
+- (Shortcut) `of1b` / `of1-daily-build` → chạy `/Users/nqcdan/dev/wiki/automation/of1_daily_build.sh`
 - `gradle clean build --refresh-dependencies`
 - `gradle publishToMaven`
 
@@ -43,6 +60,7 @@ Lệnh và conventions cụ thể cho môi trường của anh Đàn.
 
 ## Mobile / Flutter
 
+- Flutter bin in PATH: `/Users/nqcdan/dev/tools/flutter/bin`
 - `flutter doctor`
 - `flutter clean && flutter pub get`
 - `flutter build apk --release`
