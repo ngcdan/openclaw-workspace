@@ -50,6 +50,35 @@ Lệnh và conventions cụ thể cho môi trường của anh Đàn.
 - `gradle clean build --refresh-dependencies`
 - `gradle publishToMaven`
 
+## eGov (a Hiếu)
+
+### Run/build
+- Root dir: `~/Documents/projects/forgejo/of1-egov`
+- Build (Java): `./tools.sh build -clean -code -ui`
+- Env dir: `~/Documents/projects/forgejo/working/release-egov/server-env`
+- Run server: `ENV_NAME=dev ./instances.sh run`
+- Web UI dir: `~/Documents/projects/forgejo/of1-egov/webui/egov`
+- Web UI dev: `pnpm run dev-server`
+
+### Questions to ask / discuss
+1) Flow run server eGov
+   - Start server platform / UI phoenix
+   - Start server eGov / UI
+   - Bật lại nginx vào cổng `localhost:8080`
+2) Branching + libs sync
+   - DB platform là beta
+   - Code eGov của các dự án công ty (trừ eGov) luôn update theo nhánh `dev`?
+     - Nếu đúng: nhánh `egov` có được merge/update từ `dev` về không?
+   - Flow làm việc: checkout `egov-local-server` -> làm -> tạo PR -> submit merge vào `egov`
+   - Lib Java + UI của platform publish lên Nexus có update đồng bộ với release của `dev` không?
+3) DB info
+   - `of1@egov-dev`: `postgres.of1-dev-egov.svc.cluster.local:5432/egov`
+   - `of1@egov-prod`: `egov-server.of1-prod-platform.svc.cluster.local:5432/egov`
+   - `of1@platform-egov`: DB beta
+   - `of1@ecus-prod`: `win-server-16-ecus-hp.beehp-prod-logs.svc.cluster.local:1433;database=ECUS5VNACCS`
+   - `of1@ecus-snapshot`: `win-server-16-ecus-hp.of1-dev-egov.svc.cluster.local:1433;database=ECUS5VNACCS`
+   - `of1@ecus-dev`: ???
+
 ## Git
 
 - **GitHub:** `git config user.name "nqcdan" && git config user.email "linuss1908@gmail.com"`
@@ -66,6 +95,11 @@ Lệnh và conventions cụ thể cho môi trường của anh Đàn.
 - `flutter build apk --release`
 - `flutter build appbundle --release`
 - `flutter build ios --release`
+
+### iOS Signing (OF1 Mobile)
+- Expected `DEVELOPMENT_TEAM`: `7UUQ3ZFF85`
+- Expected `PRODUCT_BUNDLE_IDENTIFIER`: `beelogistics.cloud.of1`
+- If build error mentions other Team ID (e.g. `Y435B5XJHH`) or bundle (e.g. `com.lam.of1mobile`), likely a bad commit in `apps/mobile/ios/Runner.xcodeproj/project.pbxproj`.
 
 ## K8s / Server
 
