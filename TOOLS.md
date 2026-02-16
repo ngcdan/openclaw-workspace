@@ -68,7 +68,8 @@ Lệnh và conventions cụ thể cho môi trường của anh Đàn.
 2) Branching + libs sync
    - DB platform là beta
    - Code eGov của các dự án công ty (trừ eGov) luôn update theo nhánh `dev`?
-     - Nếu đúng: nhánh `egov` có được merge/update từ `dev` về không?
+     - Nếu đúng: nhánh `egov` em có được merge/update từ `dev` về không?
+   - Note: chỉ làm việc trên nhánh `egov_local_server`, sau đó tạo pull request vào nhánh `egov`
    - Flow làm việc: checkout `egov-local-server` -> làm -> tạo PR -> submit merge vào `egov`
    - Lib Java + UI của platform publish lên Nexus có update đồng bộ với release của `dev` không?
 3) DB info

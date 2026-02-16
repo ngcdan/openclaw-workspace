@@ -14,9 +14,12 @@
 
 ### Preferences Learned
 - **Coding style:** không emoji trong code; code nhìn như người bình thường viết
+- **Java style:** ưu tiên rút gọn import (dùng `import ...;`), tránh viết fully qualified class names inline trừ khi bị trùng tên
 - **Code organization:** thích style hướng đối tượng/class (Java-ish), chia lớp theo trách nhiệm, flow rõ ràng
 - **Comments/docs:** comment ngắn gọn nhưng đủ để đọc hiểu mục đích + flow
 - **Autonomy:** được push remote branch tự do; hỏi trước khi deploy/restart/migrate/force-push/xóa lớn/hành động ra ngoài
+- **Environment isolation (rule/goal):** ưu tiên setup môi trường tách biệt: dev riêng, giải trí riêng, work công ty riêng, work cá nhân riêng; giữ các workspace/window theo dự án (IntelliJ, DataGrip, VS Code) mở cố định, hạn chế trộn workspace.
+- **Machines:** MacBook M1 2020 (16GB), Mac mini M4 (24GB, máy cá nhân), 1 Windows VM công ty (remote desktop).
 - **Chat/Response format:** Với *mọi* tin nhắn Đàn gửi (tiếng Việt/tiếng Anh/mix), Zoe sẽ:
   1) đứng ở góc nhìn của Đàn → Zoe để hiểu đúng **ý định**
      (không word-by-word, không quote lại)
@@ -74,6 +77,10 @@ _(Chưa có thông tin)_
 - Data/Python: venv tại `of1-platform/datatp-python`
 - Terminal: kitty + zsh + oh-my-zsh + powerlevel10k
 - macOS, Homebrew
+
+### eGov / ECUS (a Hiếu) – project modules
+- `eCustoms` (`ecutoms`): nghiệp vụ lưu data Postgres; thiết kế phần mềm tương tự `ecus-thaison`
+- `ecus-thaison`: đọc data từ MSSQL, mapping (DTO <-> Entities) rồi save sang Postgres
 
 ## Work habits / Working system (Dan)
 - Nguyên tắc: **keep it simple**; ưu tiên loại bỏ phức tạp không cần thiết.
